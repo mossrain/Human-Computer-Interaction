@@ -1,0 +1,335 @@
+.container {
+  display: flex;
+  height: 100vh;
+
+}
+
+.sub-container{
+  display: flex;
+}
+
+.single-selector{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0.6;
+}
+
+.multi-selector{
+  display: flex;
+  /* flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  flex: 1.4;
+  max-height: 15vh;
+  overflow: auto;
+  max-width: 27vh;
+  /* 半透明黑色背景 */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* .left, .right {
+  flex: 1;
+} */
+
+.image-search {
+  text-align: center; /* 居中对齐 */
+  max-width: 800px; /* 最大宽度 */
+  margin: auto; /* 水平居中 */
+  padding: 20px; /* 内边距 */
+  flex:1;
+}
+
+h1 {
+  font-size: 36px; /* 大标题字体大小 */
+  margin-bottom: 10px; /* 大标题下边距 */
+}
+
+h2 {
+  font-size: 24px; /* 副标题字体大小 */
+  margin-bottom: 20px; /* 副标题下边距 */
+}
+
+form {
+  display: flex; /* 将表单元素设置为 Flex 容器 */
+  flex-direction: column; /* 垂直方向排列 */
+  align-items: center; /* 居中对齐 */
+}
+
+label {
+  font-size: 18px; /* 表单标签字体大小 */
+  margin-bottom: 10px; /* 表单元素下边距 */
+}
+
+input[type="file"] {
+  margin-bottom: 20px; /* 表单元素下边距 */
+}
+
+button {
+  margin-top: 20px;
+  background-color: #f2f2f2;
+  color: red;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: rgb(193, 131, 131);
+  cursor: pointer;
+}
+
+
+#upload-box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border: 1px dashed #ccc;
+    text-align: center;
+    font-size: 16px;
+    line-height: 200px;
+  }
+  
+  #upload-box.dragover {
+    background-color: #f7f7f7;
+  }
+  
+  #upload-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: none;
+  }
+  
+  /* #preview {
+    max-width: 100%;
+    max-height: 100%;
+    
+  } */
+  .upload-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  
+  #upload-box {
+    border: 3px dashed #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  #upload-box:hover {
+    border-color: #999;
+  }
+  
+  #upload-box:active {
+    border-color: #333;
+  }
+  
+  #upload-text {
+    font-size: 20px;
+  }
+  
+  
+  #preview {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+  
+  .search-btn {
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+  }
+  
+  .search-btn:hover {
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  
+  .search-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .search-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2vw;
+    margin-top: 9vh;
+    flex: 1;
+  }
+
+  /* img{
+    min-width: 100%;
+    height: auto;
+  } */
+  
+  .search-result {
+    position: relative; 
+    max-width: 23vw;
+    height: 23vh;
+  }
+
+  .similarity {
+    position: absolute; /* 绝对定位 */
+    bottom: 0; /* 定位到底部 */
+    left: 0; /* 定位到左侧 */
+    width: 100%; /* 宽度和父元素一致 */
+    padding: 10px; /* 设置内边距 */
+    font-size: 14px; /* 设置字体大小 */
+    color: white; /* 文字颜色 */
+    background-color: rgba(0, 0, 0, 0.5); /* 背景颜色 */
+    border: 1px solid black; /* 边框 */
+    box-sizing: border-box; /* 边框计入盒模型 */
+  }
+  
+  .similarity::after {
+    content: ""; /* 伪元素的内容为空 */
+    position: absolute; /* 绝对定位 */
+    bottom: -8px; /* 定位到底部，留出8像素的间隙 */
+    left: 50%; /* 定位到中间 */
+    width: 0; /* 宽度为0 */
+    height: 0; /* 高度为0 */
+    border-left: 8px solid transparent; /* 左边框样式 */
+    border-right: 8px solid transparent; /* 右边框样式 */
+    border-top: 8px solid rgba(0, 0, 0, 0.5); /* 上边框样式 */
+  }
+
+  .dislike-tooltip {
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 定位到顶部 */
+    left: 0; /* 定位到左侧 */
+    width: 100%; /* 宽度和父元素一致 */
+    padding: 10px; /* 设置内边距 */
+    font-size: 14px; /* 设置字体大小 */
+    color: white; /* 文字颜色 */
+    background-color: rgba(0, 0, 0, 0.5); /* 背景颜色 */
+    border: 1px solid black; /* 边框 */
+    box-sizing: border-box; /* 边框计入盒模型 */
+  }
+  
+  .dislike-tooltip::after {
+    content: ""; /* 伪元素的内容为空 */
+    position: absolute; /* 绝对定位 */
+    top: 8px; /* 定位到顶部，留出8像素的间隙 */
+    left: 50%; /* 定位到中间 */
+    width: 0; /* 宽度为0 */
+    height: 0; /* 高度为0 */
+    border-left: 8px solid transparent; /* 左边框样式 */
+    border-right: 8px solid transparent; /* 右边框样式 */
+    border-top: 8px solid rgba(0, 0, 0, 0.5); /* 上边框样式 */
+  }
+  
+  .search-result img {
+    width: 23vw;
+    height: 23vh;
+  }
+
+  .overlay {
+    position: absolute; /* 绝对定位 */
+    top: 50%; /* 定位到中间 */
+    left: 50%; /* 定位到中间 */
+    transform: translate(-50%, -50%); /* 调整位置 */
+    opacity: 0; /* 初始透明度为0 */
+    transition: opacity 0.2s; /* 设置过渡效果 */
+  }
+  
+  .overlay:hover {
+    opacity: 1; /* 鼠标悬浮时透明度为1 */
+  }
+
+  .icon {
+    position: relative; /* 相对定位 */
+    display: inline-block; /* 设置为内联块级元素 */
+    margin: 5px; /* 设置外边距 */
+    padding: 5px 10px; /* 设置内边距 */
+    color: white; /* 字体颜色 */
+    background-color: rgba(0, 0, 0, 0.5); /* 背景颜色 */
+    border-radius: 5px; /* 设置圆角 */
+    cursor: pointer; /* 鼠标样式为手型 */
+  }
+
+  .save {
+    content: ""; /* 伪元素的内容为空 */
+    position: absolute; /* 绝对定位 */
+    top: 50%; /* 定位到中间 */
+    left: 0; /* 定位到左侧 */
+    transform: translateY(-50%); /* 调整位置 */
+    width: 32px; /* 设置宽度 */
+    height: 32px; /* 设置高度 */
+    background-color: white; 
+    background-image: url('/images/save.jpg');
+    background-size: cover;
+    border-radius: 50%; /* 设置圆形 */
+    border: 1px solid rgba(0, 0, 0, 0.5); /* 边框样式 */
+  }
+  
+  .dislike {
+    content: ""; /* 伪元素的内容为空 */
+    position: absolute; /* 绝对定位 */
+    top: 50%; /* 定位到中间 */
+    right: 0; /* 定位到右侧 */
+    transform: translateY(-50%); /* 调整位置 */
+    width: 32px; /* 设置宽度 */
+    height: 32px; /* 设置高度 */
+    background-image: url('/images/dislike.jpg');
+    background-size: cover;
+    border-radius: 50%; /* 设置圆形 */
+    border: 1px solid rgba(0, 0, 0, 0.5); /* 边框样式 */
+  }
+
+  .disliked {
+    opacity: 0.5;
+  }
+  
+
+  /*多选框 */
+
+  /* 隐藏下拉列表 */
+.dropdown-content {
+  display: none;
+}
+
+/* 显示下拉列表 */
+.dropdown-content.show {
+  display: block;
+}
+
+/* 下拉按钮样式 */
+.dropdown-btn {
+  /* background-color: #ccc; */
+  color:white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+}
+
+
